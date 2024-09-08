@@ -1,0 +1,112 @@
+/* Content default page */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* Screen Loading */
+#loading {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 100;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: none; /* Center content */
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: #0093E9;
+    background-image: -o-linear-gradient(bottom, #0093E9 0%, #80D0C7 100%);
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#0093E9), to(#80D0C7));
+    background-image: linear-gradient(0deg, #0093E9 0%, #80D0C7 100%);
+    background-size: 200% 200%;
+    -webkit-animation: 2s rotate linear infinite;
+            animation: 2s rotate linear infinite;
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+    -webkit-animation: 1s emerge ease;
+            animation: 1s emerge ease;
+}
+
+/* Alerts */
+#warning, #success {
+    background-color: #ff6961;
+    width: 100%;
+    -webkit-animation: 1s transition-x;
+            animation: 1s transition-x;
+    position: fixed;
+    z-index: 99;
+    padding: 5px 15px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    display: none;
+}
+#success {
+    background-color: greenyellow;
+    color: green;
+}
+#warning {
+    background-color: #ff6961;
+    color: #8b0000;
+}
+
+/* Rodapé */
+footer{
+    position: fixed;
+    bottom: 0;
+    z-index: 98;
+    color: #1aa4b8;
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+/* Animations */
+@-webkit-keyframes transition-x {
+    0% {
+        -webkit-transform: translateX(-100%);
+                transform: translateX(-100%);
+    }
+    100% {
+        -webkit-transform: translateX(0);
+                transform: translateX(0);    
+    }
+}
+@keyframes transition-x {
+    0% {
+        -webkit-transform: translateX(-100%);
+                transform: translateX(-100%);
+    }
+    100% {
+        -webkit-transform: translateX(0);
+                transform: translateX(0);    
+    }
+}
+@-webkit-keyframes rotate {
+    0% {
+        background-position: 0% 0%;
+    }
+    50%{
+        background-position: 100% 100%;
+    }
+    100%{
+        background-position: 0% 0%;
+    }
+}
+@keyframes rotate {
+    0% {
+        background-position: 0% 0%;
+    }
+    50%{
+        background-position: 100% 100%;
+    }
+    100%{
+        background-position: 0% 0%;
+    }
+}

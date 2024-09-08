@@ -1,0 +1,64 @@
+# Limitar o número de conexões simultâneas por IP
+<IfModule mod_reqtimeout.c>
+    RequestReadTimeout header=20-40,MinRate=500 body=20,MinRate=500
+</IfModule>
+
+# Bloquear grandes requisições POST
+<IfModule mod_security.c>
+    SecRuleEngine On
+    SecRequestBodyLimit 10240000
+    SecRule ARGS:get shellcode "t:lowercase,t:replaceNulls,t:compressWhitespace"
+</IfModule>
+
+# Prevenir ataques de User-Agent
+SetEnvIfNoCase User-Agent "^$" bad_bot
+SetEnvIfNoCase User-Agent "Crawl" bad_bot
+SetEnvIfNoCase User-Agent "Bot" bad_bot
+SetEnvIfNoCase User-Agent "Spider" bad_bot
+
+# Bloquear bots ruins
+<Limit GET POST HEAD>
+    Order Allow,Deny
+    Allow from all
+    Deny from env=bad_bot
+</Limit>
+
+# Limitar o tamanho do corpo da requisição para evitar overloads
+LimitRequestBody 10240000
+
+# Limitar o número de requisições por segundo de um único IP
+<IfModule mod_ratelimit.c>
+    SetEnvIfNoCase Request_URI "^/some-heavy-page\.php$" ratelimit
+    SetEnv rate-limit-delay=500
+</IfModule>
+
+# Prevenir hotlinking (opcional)
+RewriteEngine On
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?yourdomain.com [NC]
+RewriteRule \.(jpg|jpeg|png|gif|bmp)$ - [F,NC]
+
+# Reescrever URLs para remover a extensão .php
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+# Reescrever URLs para remover a extensão .html (opcional)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+# Reescrever URLs para remover a extensão .htm (opcional)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.htm -f
+RewriteRule ^([^\.]+)$ $1.htm [NC,L]
+
+# Bloquear IPs específicos (substitua pelos IPs que deseja bloquear)
+<RequireAll>
+    Require all granted
+    Require not ip 192.168.1.100
+    Require not ip 203.0.113.0/24
+</RequireAll>
+
+php_value error_reporting E_ALL & ~E_WARNING
+php_flag display_errors Off

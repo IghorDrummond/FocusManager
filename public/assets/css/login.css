@@ -1,0 +1,194 @@
+::-moz-selection{
+	color: #1aa4b8;
+}
+
+::-webkit-input-placeholder{
+	color: #1aa4b8;
+}
+
+::-moz-placeholder{
+	color: #1aa4b8;
+}
+
+:-ms-input-placeholder{
+	color: #1aa4b8;
+}
+
+::-ms-input-placeholder{
+	color: #1aa4b8;
+}
+
+::placeholder, ::selection, input{
+	color: #1aa4b8;
+}
+
+::-moz-selection {
+    background-color: white;
+}
+
+::selection {
+    background-color: white;
+}
+
+/* background Login Page */
+main{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+    background: transparent url('../image/wallpaper.jpg') no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+	padding: 15px;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+/* Form */
+form{
+	-webkit-backdrop-filter: blur(18px);
+	        backdrop-filter: blur(18px);
+	background-color: rgba(255, 255, 255, 0.1);
+	-webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+	padding: 5px;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	border: 25px solid rgba(255,255,255,0.1);
+	border-radius: 15px;
+	font-weight: bold;
+	font-family: arial;
+	-webkit-animation: emerge 1s ease;
+	        animation: emerge 1s ease;
+	z-index: 2;
+}
+
+form>div>img:not(:hover){
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+	-webkit-transition: all 2s;
+	-o-transition: all 2s;
+	transition: all 2s;
+}
+form>div{
+	text-align: center;
+	padding: 25px 0;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+input{
+	display: block;
+	background: transparent;
+	border: none;
+	border-bottom: 5px solid white;
+	border-radius: 5px;
+	width: 95%;
+	padding: 5px 0;
+}
+
+input:focus {
+    outline: none;
+}
+
+label{
+	margin: 5px 0;
+}
+
+button:not(:hover){
+	background-color: transparent;
+	border: none;
+	-webkit-transition: all 1s;
+	-o-transition: all 1s;
+	transition: all 1s;
+}
+
+button, form{
+	color: #1aa4b8;
+}
+
+/* Cloud Sky */
+#cloud{
+	background: 
+		url('../image/cloud 4.png') repeat-x,
+		url('../image/cloud5.png') repeat-x,
+		url('../image/cloud3.png') repeat-x,
+		url('../image/cloud2.png') repeat-x,
+		url('../image/cloud1.png') repeat-x;
+	position: fixed;
+	background-size: cover;
+	width: 100%;
+	height: 100vh;
+	z-index: 1;
+	-webkit-animation: moveClouds 150s linear infinite;
+	        animation: moveClouds 150s linear infinite;
+	opacity: 0.8;
+}
+
+/* Hovers */
+button:hover{
+	border: none;
+	background-color: transparent;
+}
+
+form>div>img:hover{
+	width: 100px;
+	height: 100px;
+	-webkit-transform: scale(1.1);
+	    -ms-transform: scale(1.1);
+	        transform: scale(1.1);
+	-webkit-transition: all 1s;
+	-o-transition: all 1s;
+	transition: all 1s;
+}
+
+/* Animations */
+@-webkit-keyframes emerge{
+	from{
+		-webkit-transform: translateY(-100%);
+		        transform: translateY(-100%);
+		opacity: 0;
+	}to{
+		-webkit-transform: translateY(0);
+		        transform: translateY(0);
+		opacity: 1;
+	}
+}
+@keyframes emerge{
+	from{
+		-webkit-transform: translateY(-100%);
+		        transform: translateY(-100%);
+		opacity: 0;
+	}to{
+		-webkit-transform: translateY(0);
+		        transform: translateY(0);
+		opacity: 1;
+	}
+}
+@-webkit-keyframes moveClouds {
+	0% {
+		background-position: 0 0;
+	}
+	100% {
+		background-position: 360% 0;
+	}
+}
+@keyframes moveClouds {
+	0% {
+		background-position: 0 0;
+	}
+	100% {
+		background-position: 360% 0;
+	}
+}
