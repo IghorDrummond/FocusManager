@@ -43,7 +43,7 @@ No Linux (Debian/Ubuntu):
 <h1>Iniciando o Servidor Embutido do PHP 🚀</h1>
 Para iniciar o servidor embutido do PHP e acessar o FocusManager, siga os passos abaixo:
 
-Abra um terminal (ou prompt de comando) e navegue até o diretório raiz do seu projeto:
+Abra um terminal (ou prompt de comando) e navegue até o diretório public localizado na raiz do seu projeto:
 <blockquote>
     cd /caminho/para/seu/projeto/FocusManager/public
 </blockquote>
