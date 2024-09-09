@@ -3,7 +3,7 @@
 **FocusManager** é um projeto PHP que segue o padrão MVC (Model-View-Controller). O projeto utiliza HTML, CSS e JavaScript para a interface e funcionalidades, oferecendo uma aplicação web organizada e funcional.
 
 ## Video do Projeto 
-Caso não deseje baixar o projeto, pode-se acessar o video de demonstração do mesmo <a href="[video.mp4](https://drive.google.com/file/d/1tcWujFqq6rfz9PBxyzqVQOUuLgpf4yyw/view?usp=sharing)">apertando aqui</a>
+Caso não deseje baixar o projeto, pode-se acessar o video de demonstração do mesmo <a href="https://drive.google.com/file/d/1tcWujFqq6rfz9PBxyzqVQOUuLgpf4yyw/view?usp=sharing">apertando aqui</a>
 
 ## Requisitos 📋
 
