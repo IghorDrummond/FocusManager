@@ -36,7 +36,7 @@ No macOS (usando Homebrew):
 
 No Linux (Debian/Ubuntu):
 <blockquote>
-    1 - sudo apt update
+    1 - sudo apt update <br>
     2 - sudo apt install php
 </blockquote>
 
