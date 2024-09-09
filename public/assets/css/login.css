@@ -30,6 +30,10 @@
     background-color: white;
 }
 
+fieldset:nth-child(2){
+	margin: 15px 0;
+}
+
 /* background Login Page */
 main{
 	display: -webkit-box;
@@ -96,6 +100,7 @@ input{
 	border-radius: 5px;
 	width: 95%;
 	padding: 5px 0;
+	border-bottom: 2px solid #1aa4b8;
 }
 
 input:focus {
@@ -112,8 +117,13 @@ button:not(:hover){
 	-webkit-transition: all 1s;
 	-o-transition: all 1s;
 	transition: all 1s;
+	border-bottom: 2px solid #1aa4b8;
 }
 
+button:nth-child(1){
+	display: block;
+	margin: auto;
+}
 button, form{
 	color: #1aa4b8;
 }
@@ -139,7 +149,9 @@ button, form{
 /* Hovers */
 button:hover{
 	border: none;
+	transform: scale(102%);
 	background-color: transparent;
+	transition: all 1s;
 }
 
 form>div>img:hover{
